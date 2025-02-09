@@ -56,7 +56,7 @@ export default function HeroSection() {
     >
       <div className="flex flex-col space-y-4 md:w-1/2">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-          Hello, I'm{' '}
+          Hello, I&apos;m{' '}
           <span className="gradient-text whitespace-nowrap">
             Helbin Rapheal
           </span>

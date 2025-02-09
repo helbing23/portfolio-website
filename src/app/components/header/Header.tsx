@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "../ui/Container";
@@ -10,7 +10,6 @@ const Header = () => {
   const [theme, setTheme] = useState("");
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState("#hero");
   const [currentSection, setCurrentSection] = useState("#hero");
   const pathname = usePathname();
 
@@ -37,66 +36,24 @@ const Header = () => {
     }
     setMounted(true);
 
-    // Reset hash-based navigation when not on homepage
+    // Reset section when not on homepage
     if (pathname !== '/') {
-      setActiveHash("");
       setCurrentSection("");
     } else {
-      // Initialize active section based on URL hash only on homepage
+      // Initialize section based on URL hash only on homepage
       const initialHash = window.location.hash || "#hero";
-      setActiveHash(initialHash);
       setCurrentSection(initialHash);
     }
 
     const handleHashChange = () => {
       if (pathname === '/') {
         const hash = window.location.hash || "#hero";
-        setActiveHash(hash);
+        setCurrentSection(hash);
       }
     };
     window.addEventListener("hashchange", handleHashChange);
 
-    // Create intersection observer only for homepage
-    if (pathname === '/') {
-      const observerCallback = (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-            const id = `#${entry.target.id}`;
-            
-            if (id === "#about" || id === "#contact") {
-              setCurrentSection(id);
-              if (window.location.hash !== id) {
-                history.replaceState(null, '', id);
-                setActiveHash(id);
-              }
-            } else {
-              setCurrentSection("#hero");
-              if (window.location.hash !== "#about" && window.location.hash !== "#contact") {
-                history.replaceState(null, '', '#hero');
-                setActiveHash("#hero");
-              }
-            }
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(observerCallback, {
-        threshold: 0.5,
-        rootMargin: "-45% 0px -45% 0px"
-      });
-
-      const sections = document.querySelectorAll('section[id]');
-      sections.forEach((section) => observer.observe(section));
-
-      return () => {
-        sections.forEach((section) => observer.unobserve(section));
-        window.removeEventListener("hashchange", handleHashChange);
-      };
-    }
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, [pathname]);
 
   const handleScroll = () => {
@@ -146,10 +103,8 @@ const Header = () => {
 
   const handleNavClick = (item: { hash: string, isHash: boolean }) => {
     if (pathname === '/' && item.isHash) {
-      setActiveHash(item.hash);
       setCurrentSection(item.hash);
     } else {
-      setActiveHash("");
       setCurrentSection("");
     }
     setIsMenuOpen(false);

@@ -27,11 +27,10 @@ export function ChangeLog() {
       content: (
         <div>
           <p className="text-lg mb-6">
-            "Dream big, work hard, and keep learning."
+            &ldquo;Dream big, work hard, and keep learning.&rdquo;
           </p>
           <p className="text-md mb-6 shadow-md bg-gradient-gray dark:bg-black dark:border-white/[0.2] border rounded-xl p-4 transition-all scale-100 hover:scale-105">
-          Exploring AI opportunities as a 🤖 Future AI Engineer<br/>
-          This year, I’ve been upskilling myself to transition into AI, specifically focusing on Generative AI. Currently learning Python and Prompt Engineering as I work toward expanding my knowledge in machine learning concepts.
+            I&apos;ve been upskilling myself to transition into AI, specifically focusing on Generative AI. Currently learning Python and Prompt Engineering as I work toward expanding my knowledge in machine learning concepts.
           </p>
           {experiences.filter(exp => exp.id === 'company5').map(exp => (
             <div key={exp.id} className="text-md mb-6 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:border-white/[0.2] border rounded-xl p-4 transition-all scale-100 hover:scale-105">

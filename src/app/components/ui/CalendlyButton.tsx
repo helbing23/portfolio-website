@@ -2,13 +2,20 @@
 
 import { SiCalendly } from "react-icons/si"
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (config: { url: string }) => void;
+    };
+  }
+}
+
 export default function CalendlyButton() {
   return (
     <a
       href="#"
       onClick={(e) => {
         e.preventDefault();
-        // @ts-ignore (Calendly is loaded globally)
         window.Calendly?.initPopupWidget({
           url: 'https://calendly.com/helbinrapheal'
         });

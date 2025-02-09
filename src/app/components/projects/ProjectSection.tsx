@@ -7,62 +7,23 @@ import projects from "./data";
 export default function ProjectSection(): JSX.Element {
     const [currentSlide, setCurrentSlide] = useState(0);
     const scrollRef = useRef<HTMLDivElement>(null);
-    const timerRef = useRef<NodeJS.Timeout>();
-    
+
     useEffect(() => {
-      const scrollContainer = scrollRef.current;
-      if (!scrollContainer) return;
-    
-      const calculateSlidePosition = () => {
-        const cardWidth = 320; // Width of each card (w-80 = 20rem = 320px)
-        const gap = 16; // Gap between cards (gap-4 = 1rem = 16px)
-        return (cardWidth + gap) * currentSlide;
-      };
-    
-      const autoScroll = () => {
-        const nextSlide = (currentSlide + 1) % projects.length;
-        const newScrollPosition = calculateSlidePosition();
-        
-        scrollContainer.scrollTo({
-          left: newScrollPosition,
-          behavior: 'smooth'
-        });
-    
-        setCurrentSlide(nextSlide);
-      };
-    
-      // Clear any existing timer before setting a new one
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
-    
-      timerRef.current = setInterval(autoScroll, 3000);
-    
-      const handleScroll = () => {
-        const cardWidth = 320 + 16; // Card width + gap
-        const currentPosition = scrollContainer.scrollLeft;
-        const newSlide = Math.round(currentPosition / cardWidth);
-        
-        if (newSlide !== currentSlide) {
-          setCurrentSlide(newSlide);
+      const timer = setInterval(() => {
+        if (scrollRef.current) {
+          const nextSlide = (currentSlide + 1) % projects.length;
+          setCurrentSlide(nextSlide);
           
-          // Reset the timer when user manually scrolls
-          if (timerRef.current) {
-            clearInterval(timerRef.current);
-            timerRef.current = setInterval(autoScroll, 3000);
-          }
+          const slideWidth = 320 + 16; // width of card (w-80 = 320px) + gap (gap-4 = 16px)
+          scrollRef.current.scrollTo({
+            left: nextSlide * slideWidth,
+            behavior: 'smooth'
+          });
         }
-      };
-    
-      scrollContainer.addEventListener('scroll', handleScroll);
-    
-      return () => {
-        if (timerRef.current) {
-          clearInterval(timerRef.current);
-        }
-        scrollContainer.removeEventListener('scroll', handleScroll);
-      };
-    }, [currentSlide, projects.length]);
+      }, 3000);
+
+      return () => clearInterval(timer);
+    }, [currentSlide]); // Remove projects.length from dependencies
 
   return (
     <ReactLenis root>
@@ -72,7 +33,7 @@ export default function ProjectSection(): JSX.Element {
                 <div className="md:w-full">
                     <h2 className="text-3xl font-bold mb-8">My Work</h2>
                     <p className="text-lg mb-6">
-                        Here's an overview of my freelance projects where I've provided end-to-end web development solutions. 
+                        Here&apos;s an overview of my freelance projects where I&apos;ve provided end-to-end web development solutions. 
                         These showcase my expertise in delivering comprehensive services, from logo design to SEO optimization, 
                         helping small businesses and startups establish their digital presence.
                     </p>

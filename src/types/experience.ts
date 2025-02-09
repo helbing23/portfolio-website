@@ -1,4 +1,5 @@
-import { ReactElement, JSXElementConstructor } from 'react';
+import { ReactElement } from 'react';
+import { IconBaseProps } from 'react-icons';
 
 export interface Experience {
     id: string;
@@ -11,5 +12,5 @@ export interface Experience {
     location: string;
     link: string;
     favicon: string;
-    technologies: ReactElement<any, string | JSXElementConstructor<any>>[];
+    technologies: ReactElement<IconBaseProps>[];
 }

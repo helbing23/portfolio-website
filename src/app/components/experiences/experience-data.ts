@@ -3,10 +3,10 @@ import { Experience } from "@/types/experience";
 import { 
   FaWordpress, FaHtml5, FaCss3Alt, 
   FaNetworkWired, FaPhoneAlt, FaServer, FaDesktop, FaHeadset,
-  FaReact, FaSass, FaDocker, FaGitAlt, FaFigma 
+  FaReact, FaSass, FaDocker, FaGitAlt, FaFigma, FaMicrosoft
 } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiJavascript, SiPhp, SiMysql, SiBootstrap, SiDrupal, SiJira, SiAdobexd, SiAdobephotoshop, SiPostgresql, SiSvelte, SiBlazor, SiSlack, SiElementor, SiCodeigniter, SiAdobeillustrator, SiAdobeindesign, SiJquery, SiWoo, SiDotnet, SiChartdotjs, SiSubversion, SiClickup, SiHubspot, SiCisco, SiMicrosoft, SiMicrosoftoutlook, SiWindowsxp, SiKdenlive, SiAdobe, SiOracle } from 'react-icons/si';
-import { BsPrinterFill, BsRouter } from 'react-icons/bs';
+import { SiTypescript, SiTailwindcss, SiJavascript, SiPhp, SiMysql, SiBootstrap, SiDrupal, SiJira, SiAdobexd, SiAdobephotoshop, SiPostgresql, SiSvelte, SiBlazor, SiSlack, SiElementor, SiCodeigniter, SiAdobeillustrator, SiAdobeindesign, SiJquery, SiWoo, SiDotnet, SiChartdotjs, SiSubversion, SiClickup, SiHubspot, SiCisco, SiKdenlive, SiAdobe, SiOracle } from 'react-icons/si';
+import { BsPrinterFill, BsRouter, BsMicrosoftTeams } from 'react-icons/bs';
 import { MdPlayLesson } from "react-icons/md";
 import { ImOnedrive } from "react-icons/im";
 import { DiVisualstudio } from "react-icons/di";
@@ -71,9 +71,8 @@ const experiences: Experience[] = [
       React.createElement(BsPrinterFill, { size: 20, title: "Printer Systems", key: "printer" }),
       React.createElement(FaPhoneAlt, { size: 20, title: "PABX Systems", key: "pabx" }),
       React.createElement(FaHeadset, { size: 20, title: "Guest/Technical Support", key: "technical-support" }),
-      React.createElement(SiWindowsxp, { size: 20, title: "Windows Systems", key: "windows" }),
-      React.createElement(SiMicrosoft, { size: 20, title: "Microsoft Office", key: "microsoft-office" }),
-      React.createElement(SiMicrosoftoutlook, { size: 20, title: "Outlook", key: "outlook" })
+      React.createElement(FaMicrosoft , { size: 20, title: "Microsoft Office", key: "microsoft-office" }),
+      React.createElement(BsMicrosoftTeams, { size: 20, title: "Outlook", key: "outlook" })
     ],
   },
   {
@@ -175,7 +174,7 @@ const experiences: Experience[] = [
     link: "https://www.bhrhospitals.nhs.uk/",
     favicon: "",
     technologies: [
-      React.createElement(SiMicrosoft, { size: 20, title: "Microsoft Office 365", key: "microsoft-office-365" }),
+      React.createElement(FaMicrosoft, { size: 20, title: "Microsoft Office 365", key: "microsoft-office-365" }),
       React.createElement(ImOnedrive, { size: 20, title: "SharePoint", key: "sharepoint" }),
       React.createElement(SiKdenlive, { size: 20, title: "Kdenlive Video Editing", key: "kdenlive" }),
       React.createElement(MdPlayLesson, { size: 20, title: "Articulate 360", key: "articulate-360" }),

@@ -1,5 +1,6 @@
 'use client';
 import { MovingBorderStyle } from "../ui/MovingBorder";
+import Image from 'next/image';
 
 interface Client {
     id: number;
@@ -36,7 +37,7 @@ export default function ClientLogos() {
     };
 
     return (
-        <>
+        <div className="w-full">
             {/* Desktop Grid */}
             <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
                 {fillEmptySlots().map((client) => (
@@ -47,10 +48,12 @@ export default function ClientLogos() {
                             ${client.logo ? 'hover:bg-gray-800/90' : ''}`}
                     >
                         {client.logo && (
-                            <img 
+                            <Image 
                                 src={client.logo}
                                 alt={client.name}
                                 className="max-h-8 w-auto filter grayscale hover:grayscale-0 transition-all"
+                                width={32}
+                                height={32}
                             />
                         )}
                     </MovingBorderStyle>
@@ -66,10 +69,12 @@ export default function ClientLogos() {
                             key={client.id}
                             className="flex-none w-1/3 flex items-center justify-center p-4"
                         >
-                            <img 
+                            <Image 
                                 src={client.logo}
                                 alt={client.name}
                                 className="max-h-12 w-auto"
+                                width={32}
+                                height={32}
                             />
                         </div>
                     ))}
@@ -79,15 +84,49 @@ export default function ClientLogos() {
                             key={`duplicate-${client.id}`}
                             className="flex-none w-1/3 flex items-center justify-center p-4"
                         >
-                            <img 
+                            <Image 
                                 src={client.logo}
                                 alt={client.name}
                                 className="max-h-12 w-auto"
+                                width={32}
+                                height={32}
                             />
                         </div>
                     ))}
                 </div>
             </div>
-        </>
+
+            <div className="flex flex-wrap justify-center items-center gap-8">
+                <div className="w-32 h-16 relative">
+                    <Image
+                        src="/images/clients/creative-capsule.png"
+                        alt="Creative Capsule"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                </div>
+
+                <div className="w-32 h-16 relative">
+                    <Image
+                        src="/images/clients/invicta.png"
+                        alt="Invicta eSolutions"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                </div>
+
+                <div className="w-32 h-16 relative">
+                    <Image
+                        src="/images/clients/sourceitout.png"
+                        alt="Source it Out"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                </div>
+            </div>
+        </div>
     );
 }
