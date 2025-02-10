@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`md:text-2xl ${link.hoverColor} transition-colors`}
+          className={`text-2xl ${link.hoverColor} transition-colors`}
         >
           {link.icon}
         </a>
