@@ -1,6 +1,6 @@
 'use client';
 
-import { memo } from 'react';
+import { memo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiLocationMarker } from 'react-icons/hi';
@@ -49,6 +49,16 @@ const HireButton = () => (
 );
 
 export default function HeroSection() {
+  const [text, setText] = useState('Freelancer');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setText(prevText => prevText === 'Freelancer' ? 'Aspiring AI Engineer' : 'Freelancer');
+    }, 3000); // Change text every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <section
       id="hero"
@@ -61,8 +71,8 @@ export default function HeroSection() {
             Helbin Rapheal
           </span>
         </h1>
-        <p className="text-xl md:text-2xl">
-          Software Developer | Freelancer
+        <p className="text-lg md:text-xl">
+          Software Developer | {text}
         </p>
         <SocialFloating />
       </div>

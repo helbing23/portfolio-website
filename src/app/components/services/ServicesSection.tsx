@@ -1,5 +1,7 @@
 "use client";
+import Link from "next/link";
 import { ServiceCards } from "@/app/components/services/ServiceCards";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 export default function ServicesSection() {
   return (
@@ -8,13 +10,12 @@ export default function ServicesSection() {
       
       <ServiceCards />
 
-      <a 
-        href="/services" 
-        className="text-sm hover:underline flex items-center gap-2 mt-8"
-      >
-        {/* <HiEye size={20} /> */}
-        View all services
-      </a>
+      <Link href="/services" className="mt-8 flex items-center group">
+        <span className="text-sm underline group-hover:no-underline">
+          View all services
+        </span>
+        <MdOutlineDoubleArrow className="ml-2" />
+      </Link>
     </section>
   );
 }

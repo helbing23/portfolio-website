@@ -3,6 +3,8 @@ import { ReactLenis } from 'lenis/react';
 import { useEffect, useState, useRef } from 'react';
 import ProjectCard from "./ProjectCard";
 import projects from "./data";
+import Link from "next/link";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 export default function ProjectSection(): JSX.Element {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -32,12 +34,12 @@ export default function ProjectSection(): JSX.Element {
             <div className='lg:sticky lg:top-0 lg:h-screen flex items-center justify-center'>
                 <div className="md:w-full">
                     <h2 className="text-3xl font-bold mb-8">My Work</h2>
-                    <p className="text-lg mb-6">
+                    <p className="mb-6">
                         Here&apos;s an overview of my freelance projects where I&apos;ve provided end-to-end web development solutions. 
                         These showcase my expertise in delivering comprehensive services, from logo design to SEO optimization, 
                         helping small businesses and startups establish their digital presence.
                     </p>
-                    <p className="text-lg mb-6">
+                    <p className="mb-6">
                         While these projects represent my professional client work, you can explore my personal projects and 
                         open-source contributions on my{' '}
                         <a 
@@ -52,17 +54,19 @@ export default function ProjectSection(): JSX.Element {
                     </p>
 
                     <div className="flex flex-wrap gap-4 text-sm pb-10">
-                        <a href="/projects" className="flex items-center gap-2 py-2 px-3 text-sm hover:underline">
-                        {/* <HiFolder size={20} /> */}
-                        View all projects
-                        </a>
-                        <a href="/contact" className="relative flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors overflow-hidden">
+                        <Link href="/projects" className="flex items-center group">
+                          <span className="underline group-hover:no-underline">
+                            View all projects
+                          </span>
+                          <MdOutlineDoubleArrow className="ml-2" />
+                        </Link>
+                        <Link href="/contact" className="text-sm relative flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors overflow-hidden">
                         {/* <HiUsers size={20} /> */}
                         Hire Me
                         <div className="absolute inset-0 flex w-full animate-shine-infinite blur-[12px]">
                         <div className="relative h-full w-8 bg-white/30"></div>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
