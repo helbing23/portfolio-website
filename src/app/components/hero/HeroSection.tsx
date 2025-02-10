@@ -27,7 +27,7 @@ const HeroImage = memo(({ src, alt, priority = false }: HeroImageProps) => (
 HeroImage.displayName = 'HeroImage';
 
 const LocationWidget = () => (
-  <div className="absolute right-0 top-0 text-sm group xl:right-20">
+  <div className="absolute right-0 top-0 text-sm group xl:right-20 animate-float">
     <div className="flex items-center gap-2 rounded-xl bg-white/90 px-3 py-2 shadow-lg transition-colors dark:bg-neutral-800">
       <HiLocationMarker color="text-red-500" />
       <span>United Kingdom</span>
@@ -40,8 +40,8 @@ const LocationWidget = () => (
 
 const HireButton = () => (
   <Link 
-    href="/contact"
-    className="absolute bottom-0 left-10 flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-all hover:scale-105 hover:bg-green-700 md:left-14 lg:bottom-2 lg:left-16 xl:left-32"
+    href="/services#request-form"
+    className="absolute bottom-0 left-10 flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-all hover:scale-105 hover:bg-green-700 md:left-14 lg:bottom-2 lg:left-16 xl:left-32 animate-float-delayed"
   >
     <span className="animate-pulse">💬</span>
     Hire Me

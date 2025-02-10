@@ -26,6 +26,8 @@ export default {
         'fade-in-up': 'fade-in-up 2s ease-out forwards',
         'fade-in-down': 'fade-in-down 0.5s ease-out',
         'shine-infinite': 'shineInfinite 2s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'float-delayed': 'float 3s ease-in-out 1.5s infinite',
       },
       keyframes: {
         marquee: {
@@ -44,6 +46,10 @@ export default {
           '0%': { transform: 'skew(-12deg) translateX(-100%)' },
           '100%': { transform: 'skew(-12deg) translateX(100%)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        }
       },
     },
   },
