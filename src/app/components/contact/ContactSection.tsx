@@ -27,7 +27,7 @@ const ContactSection = () => {
       <p className="whitespace-nowrap">
         Feel free to reach out via&nbsp;
         <a
-          href="https://linkedin.com/in/helbin-rapheal"
+          href="https://linkedin.com/in/helbinrapheal"
           target="_blank"
           rel="noopener noreferrer"
           className="gradient-link"

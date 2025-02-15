@@ -24,19 +24,6 @@ export default function RecommendationsSection() {
           <h2 className="text-3xl font-bold mb-8 sm:hidden">LinkedIn Recommendations</h2>
           
           <Recommendations />
-
-          {/* Mobile link */}
-          <div className="mt-8 sm:hidden group">
-            <Link 
-              href="https://www.linkedin.com/in/helbin-rapheal/details/recommendations/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm underline group-hover:no-underline flex items-center gap-2"
-            >
-              <FaLinkedin size={20} />
-              View all recommendations
-            </Link>
-          </div>
         </section>
     );
 }
