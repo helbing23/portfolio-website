@@ -10,7 +10,7 @@ export default function ServicesSection() {
       
       <ServiceCards />
 
-      <Link href="/services" className="mt-8 flex items-center group">
+      <Link href="/services" className="text-blue-600 hover:text-purple-600 mt-8 flex items-center group">
         <span className="text-sm underline group-hover:no-underline">
           View all services
         </span>

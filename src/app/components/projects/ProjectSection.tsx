@@ -54,7 +54,7 @@ export default function ProjectSection(): JSX.Element {
                     </p>
 
                     <div className="flex flex-wrap gap-4 text-sm pb-10">
-                        <Link href="/projects" className="flex items-center group">
+                        <Link href="/projects" className="text-blue-600 hover:text-purple-600 flex items-center group">
                           <span className="underline group-hover:no-underline">
                             View all projects
                           </span>

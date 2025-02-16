@@ -82,12 +82,14 @@ const Recommendations = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="md:hidden relative flex h-[100px]">
+      <div className="md:hidden relative w-full min-h-[150px]">
         {recommendations.map((recommendation, index) => (
           <div
             key={index}
-            className={`absolute w-full transition-opacity duration-500 rounded-xl hover:shadow-xl shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent ${
-              currentSlide === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            className={`absolute w-full transition-opacity duration-500 rounded-xl shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border ${
+              currentSlide === index 
+                ? 'opacity-100 z-10' 
+                : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
             <div className="flex items-center gap-4 mb-4">
@@ -108,7 +110,9 @@ const Recommendations = () => {
                 <p className="text-gray-600 text-xs">{recommendation.role}</p>
               </div>
             </div>
-            <p className="text-neutral-600 text-xs dark:text-neutral-300">{truncateText(recommendation.text)}</p>
+            <p className="text-neutral-600 text-xs dark:text-neutral-300">
+              {truncateText(recommendation.text, 200)}
+            </p>
           </div>
         ))}
       </div>

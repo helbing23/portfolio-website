@@ -8,7 +8,7 @@ export function JourneyCards() {
         <BentoGridItem
           key={i}
           description={item.description}
-          className={`bg-gradient-gray ${
+          className={`bg-gradient-gray items-center ${
             i === 1 ? 'shadow-xl' : 'hover:shadow-xl'
           }`}
         />
@@ -25,6 +25,6 @@ const services = [
     description: "Enhanced user engagement and retention.",
   },
   {
-    description: "Delivered end-to-end solutions, including web design, development, and SEO.",
+    description: "Delivered end-to-end software solutions.",
   },
 ];
