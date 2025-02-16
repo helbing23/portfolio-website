@@ -62,7 +62,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col-reverse items-center justify-center gap-8 px-4 md:flex-row md:px-6 lg:px-8"
+      className="flex min-h-screen flex-col-reverse items-center justify-center gap-8 px-4 -mt-[60px] md:mt-0 md:flex-row md:px-6 lg:px-8"
     >
       <div className="flex flex-col space-y-4 md:w-1/2">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">

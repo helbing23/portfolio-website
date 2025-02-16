@@ -1,114 +1,105 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "../ui/Container";
 
+interface NavItem {
+  label: string;
+  path: string;
+  hash: string;
+  isHash: boolean;
+}
+
 const Header = () => {
   const [isFloating, setIsFloating] = useState(false);
-  const [theme, setTheme] = useState("");
+  const [headerOpacity, setHeaderOpacity] = useState(1);
+  const [theme, setTheme] = useState("light");
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("#hero");
   const pathname = usePathname();
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { label: "Home", path: "/", hash: "#hero", isHash: true },
     { label: "Projects", path: "/projects", hash: "#about", isHash: true },
     { label: "Services", path: "/services", hash: "", isHash: false },
     { label: "Learning", path: "/learning", hash: "", isHash: false },
-    // { label: "Publishing", path: "/publishing", hash: "", isHash: false },
-    // { label: "Resources", path: "/resources", hash: "", isHash: false },
-    // { label: "Learning", path: "/learning", hash: "", isHash: false },
-    { label: "Contact", path: "/#contact", hash: "#contact", isHash: true }
+    { label: "Contact", path: "/#contact", hash: "#contact", isHash: true },
   ];
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    setTheme(savedTheme);
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    setMounted(true);
-
-    // Reset section when not on homepage
-    if (pathname !== '/') {
-      setCurrentSection("");
-    } else {
-      // Initialize section based on URL hash only on homepage
-      const initialHash = window.location.hash || "#hero";
-      setCurrentSection(initialHash);
-    }
-
-    const handleHashChange = () => {
-      if (pathname === '/') {
-        const hash = window.location.hash || "#hero";
-        setCurrentSection(hash);
-      }
-    };
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [pathname]);
-
-  const handleScroll = () => {
+  // Optimized scroll handler with throttling
+  const handleScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
-    const footerOffset = document.body.scrollHeight - window.innerHeight - 200;
-    setIsFloating(scrollPosition > 50 && scrollPosition < footerOffset);
-  };
+    const totalHeight = document.body.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const footerThreshold = 200;
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
+    // Calculate distance from bottom
+    const distanceFromBottom = totalHeight - (scrollPosition + viewportHeight);
+    const opacity = Math.min(1, distanceFromBottom / footerThreshold);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    setIsFloating(scrollPosition > 50);
+    setHeaderOpacity(opacity > 0 ? opacity : 0);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  useEffect(() => {
+    const throttle = (fn: Function, wait: number) => {
+      let time = Date.now();
+      return () => {
+        if (Date.now() - time >= wait) {
+          fn();
+          time = Date.now();
+        }
+      };
+    };
 
-  const isActive = (item: { path: string, hash: string, isHash: boolean }) => {
-    // If we're not on the homepage, only use pathname matching
-    if (pathname !== '/') {
-      return pathname === item.path;
+    const throttledScroll = throttle(handleScroll, 50);
+    window.addEventListener("scroll", throttledScroll);
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, [handleScroll]);
+
+  // Theme initialization
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setTheme(savedTheme);
+    document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    setMounted(true);
+  }, []);
+
+  // Hash handling
+  useEffect(() => {
+    if (pathname === "/") {
+      const handleHashChange = () => {
+        const hash = window.location.hash || "#hero";
+        setCurrentSection(hash);
+      };
+      window.addEventListener("hashchange", handleHashChange);
+      return () => window.removeEventListener("hashchange", handleHashChange);
     }
-    
-    // On homepage, use hash-based navigation
-    if (item.isHash) {
-      if (item.hash === "#hero") {
-        return currentSection === "#hero";
-      }
-      return currentSection === item.hash;
-    }
-    
-    // For non-hash items, just use pathname matching
-    return pathname === item.path;
+  }, [pathname]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
-  const handleNavClick = (item: { hash: string, isHash: boolean }) => {
-    if (pathname === '/' && item.isHash) {
-      setCurrentSection(item.hash);
-    } else {
-      setCurrentSection("");
-    }
+  const isActive = (item: NavItem) => {
+    if (pathname !== "/") return pathname === item.path;
+    if (item.isHash) return currentSection === (item.hash || "#hero");
+    return false;
+  };
+
+  const handleNavClick = (item: NavItem) => {
+    if (pathname === "/" && item.isHash) setCurrentSection(item.hash);
     setIsMenuOpen(false);
   };
+
+  if (!mounted) return null;
 
   return (
     <Container
@@ -117,8 +108,12 @@ const Header = () => {
         isFloating ? "fixed bottom-0 mb-4 lg:max-w-full" : "relative"
       } z-50 transition-opacity animate-fade-in-down`}
     >
-      <nav className={`flex items-center mx-auto py-4 lg:px-8`}>
-        <div className={`font-bold text-xl ${isFloating ? 'hidden' : 'block'}`}>
+      <nav 
+      className="flex items-center mx-auto py-4 lg:px-8"
+      style={{ opacity: headerOpacity }}
+      >
+        {/* Logo */}
+        <div className={`font-bold text-xl transition-opacity ${isFloating ? "opacity-0" : "opacity-100"}`}>
           <Link href="/" className="gradient-text">
             Helbin.R
           </Link>
@@ -137,7 +132,7 @@ const Header = () => {
           ))}
         </div>
 
-        <button 
+        <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden fixed top-4 right-4 z-50"
         >
@@ -148,7 +143,8 @@ const Header = () => {
           )}
         </button>
 
-        <div className={`ml-auto hidden md:block ${isFloating ? 'md:hidden' : ''}`}>
+        {/* Theme Toggle */}
+        <div className={`ml-auto hidden md:block ${isFloating ? "opacity-0" : "opacity-100"}`}>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-xl bg-black border border-white/[0.2]"
@@ -157,25 +153,26 @@ const Header = () => {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 bg-white dark:bg-gray-900 z-40">
             <div className="flex flex-col items-center justify-center h-full gap-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`text-xl nav-link ${isActive(item) ? "active" : ""}`}
-                  onClick={() => handleNavClick(item)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded bg-gray-100 dark:bg-gray-900 mt-4"
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`text-xl nav-link ${isActive(item) ? "active" : ""}`}
+                onClick={() => handleNavClick(item)}
               >
-                {theme === "light" ? "🌞" : "🌙"}
-              </button>
+                {item.label}
+              </Link>
+            ))}
+            <button
+              onClick={toggleTheme}
+                className="p-2 rounded bg-gray-100 dark:bg-gray-900 mt-4"
+            >
+              {theme === "light" ? "🌞" : "🌙"}
+            </button>
             </div>
           </div>
         )}
