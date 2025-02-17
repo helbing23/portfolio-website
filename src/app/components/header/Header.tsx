@@ -45,7 +45,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const throttle = (fn: Function, wait: number) => {
+    const throttle = (fn: () => void, wait: number) => {
       let time = Date.now();
       return () => {
         if (Date.now() - time >= wait) {
