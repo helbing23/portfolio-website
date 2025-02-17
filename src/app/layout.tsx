@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/app/components/header/Header";
 import Footer from "@/app/components/footer/Footer";
 import ScrollToTop from "@/app/components/footer/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -162,6 +163,7 @@ export default function RootLayout({
 
         <main id="main-content" className="flex-grow font-sans">
           {children}
+          <Analytics />
         </main>
         
         <ScrollToTop />
