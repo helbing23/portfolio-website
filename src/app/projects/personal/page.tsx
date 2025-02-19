@@ -6,13 +6,13 @@ import projects from "@/app/components/projects/data";
 import Link from "next/link";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
-export default function CorporateProjects() {
+export default function PersonalProjects() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
 
     // Project categories
-    const corporateProjects = projects.filter(project => project.category === "Corporate");
+    const personalProjects = projects.filter(project => project.category === "Personal");
 
     // Constants
     const SLIDE_INTERVAL = 5000;
@@ -49,19 +49,19 @@ export default function CorporateProjects() {
     return (
         <section className="py-20 px-4 max-w-5xl mx-auto">
 
-            {/* Corporate Section */}
-            <div className="mb-16">
+            {/* Personal Section */}
+            <div>
                 <div className="mb-8">
-                    <h2 className="text-3xl font-bold mb-4">Corporate Projects</h2>
+                    <h2 className="text-3xl font-bold mb-4">Personal Projects</h2>
                     <p className="mb-6">
-                        These projects highlight my contributions as a front-end developer in a corporate setting,
-                        demonstrating my ability to work within a team and deliver high-quality solutions.
+                        These are my personal projects, including this portfolio website and other professional development projects
+                        that I have done as part of my learning journey.
                     </p>
                 </div>
                 <div className="hidden lg:grid grid-cols-3 gap-4">
-                    {corporateProjects.map((project, index) => (
+                    {personalProjects.map((project, index) => (
                         <ProjectCard
-                            key={`corporate-${project.title}-${index}`}
+                            key={`personal-${project.title}-${index}`}
                             project={project}
                             className="w-full"
                         />
@@ -79,9 +79,9 @@ export default function CorporateProjects() {
                         onTouchStart={handleTouchStart}
                         onTouchEnd={handleTouchEnd}
                     >
-                        {corporateProjects.slice(0, 6).map((project, index) => (
+                        {personalProjects.slice(0, 6).map((project, index) => (
                             <div
-                                key={`mobile-corporate-${project.title}-${index}`}
+                                key={`mobile-personal-${project.title}-${index}`}
                                 className="snap-center flex-none transition-opacity duration-300"
                                 style={{
                                     width: `calc(90vw - 2rem)`,
@@ -105,7 +105,6 @@ export default function CorporateProjects() {
                     </span>
                 </Link>
             </div>
-
         </section>
     );
 }

@@ -25,7 +25,7 @@ const Header = () => {
     { label: "Home", path: "/", hash: "#hero", isHash: true },
     { label: "Projects", path: "/projects", hash: "#about", isHash: true },
     { label: "Services", path: "/services", hash: "", isHash: false },
-    { label: "Learning", path: "/learning", hash: "", isHash: false },
+    { label: "Insights", path: "/insights", hash: "", isHash: false },
     { label: "Contact", path: "/#contact", hash: "#contact", isHash: true },
   ];
 

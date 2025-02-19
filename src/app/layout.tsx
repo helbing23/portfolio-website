@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/app/components/header/Header";
 import Footer from "@/app/components/footer/Footer";
 import ScrollToTop from "@/app/components/footer/ScrollToTop";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,12 +21,13 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.helbinrapheal.com'),
+  metadataBase: new URL("https://www.helbinrapheal.com"),
   title: {
     default: "Helbin Rapheal | Experienced Software Developer & AI Engineer",
-    template: "%s | Helbin Rapheal"
+    template: "%s | Helbin Rapheal",
   },
-  description: "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS, SEO, and web hosting.",
+  description:
+    "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS, SEO, and web hosting.",
   keywords: [
     "full stack developer",
     "web developer",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     "portfolio",
   ],
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -55,43 +56,41 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: "your-google-verification-code",
   },
   openGraph: {
-    title: "Helbin Rapheal | Expereinced Software Developer & Aspiring AI Engineer",
-    description: "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS (WordPress, Drupal, Shopify, Strapi), SEO, and web hosting.",
-    url: "helbinrapheal.com",
-    type: 'website',
-    locale: 'en_US',
-    images: [{
-      url: '/og-image.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Helbin Rapheal - Software Developer'
-    }],
+    title: "Helbin Rapheal | Experienced Software Developer & Aspiring AI Engineer",
+    description:
+      "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS (WordPress, Drupal, Shopify, Strapi), SEO, and web hosting.",
+    url: "https://www.helbinrapheal.com",
+    type: "website",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Helbin Rapheal - Software Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Helbin Rapheal | Expereinced Software Developer & Aspiring AI Engineer",
+    title: "Helbin Rapheal | Experienced Software Developer & Aspiring AI Engineer",
     description:
       "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS (WordPress, Drupal, Shopify, Strapi), SEO, and web hosting.",
-    creator: '@yourtwitterhandle',
-    images: '/twitter-image.jpg',
+    creator: "@yourtwitterhandle",
+    images: "/twitter-image.jpg",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -103,18 +102,9 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        
         {/* Calendly integration */}
-        <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-        />
-        <script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          async
-          defer
-        />
-        
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" async defer />
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -122,16 +112,16 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Helbin Rapheal",
-              "jobTitle": "Software Developer & AI Engineer",
-              "url": "https://www.helbinrapheal.com",
-              "sameAs": [
+              name: "Helbin Rapheal",
+              jobTitle: "Software Developer & AI Engineer",
+              url: "https://www.helbinrapheal.com",
+              sameAs: [
                 "https://linkedin.com/in/helbinrapheal",
                 "https://github.com/helbing23",
                 "https://app.daily.dev/helbindev",
                 "https://bsky.app/profile/helbinr.bsky.social",
               ],
-              "knowsAbout": [
+              knowsAbout: [
                 "Web Development",
                 "React",
                 "Next.js",
@@ -146,8 +136,8 @@ export default function RootLayout({
                 "AI Agents",
                 "AIML",
                 "LLM",
-              ]
-            })
+              ],
+            }),
           }}
         />
       </head>
@@ -158,14 +148,11 @@ export default function RootLayout({
         <a href="#main-content" className="sr-only focus:not-sr-only">
           Skip to main content
         </a>
-
         <Header />
-
         <main id="main-content" className="flex-grow font-sans">
           {children}
           <Analytics />
         </main>
-        
         <ScrollToTop />
         <Footer />
       </body>
