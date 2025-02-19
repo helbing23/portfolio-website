@@ -93,7 +93,7 @@ export default function ProjectSection() {
 
           {/* Desktop View */}
           <div className='hidden lg:grid gap-4 px-10 justify-end'>
-            {projects.map((project, index) => (
+            {projects.slice(0, 4).map((project, index) => (
               <ProjectCard 
                 key={`desktop-${project.title}-${index}`}
                 project={project} 
@@ -116,7 +116,7 @@ export default function ProjectSection() {
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              {projects.map((project, index) => (
+              {projects.slice(0, 4).map((project, index) => (
                 <div
                   key={`mobile-${project.title}-${index}`}
                   className="snap-center flex-none transition-opacity duration-300"
