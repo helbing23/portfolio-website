@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import ProjectCard from "@/app/components/projects/ProjectCard";
-import projects from "@/app/components/projects/data";
+import ProjectCard from "@/components/projects/ProjectCard";
+import projects from "@/data/project-data";
 import Link from "next/link";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
@@ -50,6 +50,14 @@ export default function Projects() {
 
     return (
         <section className="py-20 px-4 max-w-5xl mx-auto">
+            <header>
+                <h1 className="text-3xl font-bold mb-6">Projects</h1>
+            </header>
+            <article className="mb-8">
+                <p className="mb-6">
+                    I&apos;m an Experienced Software Developer, specializing in creating engaging, user-centric web applications. My expertise lies in modern web technologies, including ReactJS, SvelteJS, and Tailwind CSS, along with extensive experience in CMS platforms like Drupal and WordPress.
+                </p>
+            </article>
             {/* Freelancing Section */}
             <div className="mb-16">
                 <div className="mb-8">

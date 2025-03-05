@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import CurrentTechStack from "@/app/components/skills/CurrentTechStack";
-import { ChangeLog } from "@/app/components/experiences/ChangeLog";
+import CurrentTechStack from "@/components/skills/CurrentTechStack";
+import { ChangeLog } from "@/components/experiences/ChangeLog";
 import { JourneyCards } from "./JourneyCards";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { useState } from 'react';
@@ -51,9 +51,9 @@ export default function AboutSection() {
                 <p className="mb-4">
                     I love sharing my knowledge and insights through blogs, covering topics like web development best practices, AI integration, and career growth in tech.
                 </p>
-                <Link href="/blogs" className="flex items-center text-blue-600 hover:text-purple-600 transition-colors">
+                <Link href="/insights" className="flex items-center text-blue-600 hover:text-purple-600 transition-colors">
                     <span className="text-sm underline hover:no-underline">
-                        Click here to explore my blogs
+                        Click here to explore my Insights
                     </span>
                     <MdOutlineDoubleArrow className="ml-2" />
                 </Link>

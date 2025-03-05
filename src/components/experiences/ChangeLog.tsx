@@ -1,8 +1,8 @@
 import React from "react";
 import { Timeline } from "../ui/Timeline";
-import experiences from "./experience-data";
-import educations from './education-data';
-import certifications from "./certification-data";
+import experiences from "../../data/experience-data";
+import educations from '../../data/education-data';
+import certifications from "../../data/certification-data";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 const TechStack = ({ technologies }: { technologies: JSX.Element[] }) => (

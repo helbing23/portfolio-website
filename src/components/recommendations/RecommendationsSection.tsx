@@ -1,5 +1,5 @@
 "use client";
-import Recommendations from "@/app/components/recommendations/Recommendations";
+import Recommendations from "@/components/recommendations/Recommendations";
 import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 

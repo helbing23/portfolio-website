@@ -2,7 +2,7 @@
 import { ReactLenis } from 'lenis/react';
 import { useEffect, useState, useRef } from 'react';
 import ProjectCard from "./ProjectCard";
-import projects from "./data";
+import projects from "../../data/project-data";
 import Link from "next/link";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 

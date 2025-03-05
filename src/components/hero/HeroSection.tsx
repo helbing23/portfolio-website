@@ -4,8 +4,8 @@ import { memo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiLocationMarker } from 'react-icons/hi';
-import TimeDisplay from '@/app/components/ui/TimeDisplay';
-import SocialFloating from '@/app/components/ui/SocialFloating';
+import TimeDisplay from '@/components/ui/TimeDisplay';
+import SocialFloating from '@/components/ui/SocialFloating';
 
 interface HeroImageProps {
   src: string;

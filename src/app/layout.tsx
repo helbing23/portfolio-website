@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import Header from "@/app/components/header/Header";
-import Footer from "@/app/components/footer/Footer";
-import ScrollToTop from "@/app/components/footer/ScrollToTop";
+import "../styles/globals.css";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
+import ScrollToTop from "@/components/footer/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../assets/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
   display: "swap",
 });
 
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../assets/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
   display: "swap",

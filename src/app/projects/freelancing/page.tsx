@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import ProjectCard from "@/app/components/projects/ProjectCard";
-import projects from "@/app/components/projects/data";
+import ProjectCard from "@/components/projects/ProjectCard";
+import projects from "@/data/project-data";
 import Link from "next/link";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 

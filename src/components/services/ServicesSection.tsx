@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ServiceCards } from "@/app/components/services/ServiceCards";
+import { ServiceCards } from "@/components/services/ServiceCards";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
 export default function ServicesSection() {
