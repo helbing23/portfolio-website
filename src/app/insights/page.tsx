@@ -3,7 +3,6 @@ import { useState } from "react";
 import { PostCard } from "@/components/cards/PostCard";
 import { SimpleCard } from "@/components/cards/SimpleCard";
 import insightsData from "@/data/insights.json";
-import { Insight } from "@/types/insight";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
 const InsightsPage = () => {
