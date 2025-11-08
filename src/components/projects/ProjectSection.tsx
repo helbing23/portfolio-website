@@ -1,5 +1,5 @@
-'use client';
-import { ReactLenis } from 'lenis/react';
+"use client";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import { useEffect, useState, useRef } from 'react';
 import ProjectCard from "./ProjectCard";
 import projects from "../../data/project-data";

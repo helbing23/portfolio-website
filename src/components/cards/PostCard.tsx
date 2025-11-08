@@ -4,7 +4,7 @@ import { Insight } from "@/types/insight";
 
 export const PostCard = ({ post }: { post: Insight }) => {
   return (
-    <Link href={post.url} className="bg-gradient-gray border dark:border-white/[0.2] border-white-100/[0.2] shadow-md rounded-md p-4">
+    <Link href={post.url} className="bg-gradient-gray border border-border shadow-md rounded-md p-4">
       {post.image && (
         <Image
           src={post.image}
@@ -15,7 +15,7 @@ export const PostCard = ({ post }: { post: Insight }) => {
         />
       )}
       <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-      <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+      <p className="text-sm text-muted-foreground mb-2">{post.date}</p>
     </Link>
   );
 };

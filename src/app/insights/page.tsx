@@ -4,8 +4,10 @@ import { PostCard } from "@/components/cards/PostCard";
 import { SimpleCard } from "@/components/cards/SimpleCard";
 import insightsData from "@/data/insights.json";
 import { MdOutlineDoubleArrow } from "react-icons/md";
+import Maintenance from "@/components/ui/Maintenance";
+import { MAINTENANCE } from "@/config/maintenance";
 
-const InsightsPage = () => {
+function InsightsPageContent() {
   const [searchQuery, setSearchQuery] = useState("");
   const [visiblePostsCount, setVisiblePostsCount] = useState(5);
 
@@ -26,18 +28,18 @@ const InsightsPage = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-4xl font-semibold mb-4">Insights</h1>
-        <p className="text-gray-600 mb-4">Welcome to my insights page. Here, I share my thoughts and experiences on various topics related to technology, programming, and more. Use the search bar below to find specific insights.</p>
+        <p className="text-muted-foreground mb-4">Welcome to my insights page. Here, I share my thoughts and experiences on various topics related to technology, programming, and more. Use the search bar below to find specific insights.</p>
         <input
           type="text"
           placeholder="Search insights"
-          className="bg-gradient-gray bg-transparent border border-gray-300/[0.5] rounded-md px-4 py-2 w-full"
+          className="bg-gradient-gray bg-background/60 border border-border text-foreground placeholder:text-muted-foreground rounded-md px-4 py-2 w-full"
           value={searchQuery}
           onInput={(e) => setSearchQuery(e.currentTarget.value)}
         />
       </div>
 
       {filteredPosts.length === 0 && (
-        <p className="text-gray-600">No insights found.</p>
+        <p className="text-muted-foreground">No insights found.</p>
       )}
 
       {featuredPosts.length > 0 && (
@@ -76,4 +78,14 @@ const InsightsPage = () => {
   );
 };
 
-export default InsightsPage;
+export default function InsightsPage() {
+  if (MAINTENANCE.insights) {
+    return (
+      <Maintenance
+        title="Insights is under maintenance"
+        description="This section is being updated. Please check back soon."
+      />
+    );
+  }
+  return <InsightsPageContent />;
+}

@@ -142,14 +142,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col font-sans`}
         suppressHydrationWarning={true}
       >
         <a href="#main-content" className="sr-only focus:not-sr-only">
           Skip to main content
         </a>
         <Header />
-        <main id="main-content" className="flex-grow font-sans">
+        <main id="main-content" className="flex-grow">
           {children}
           <Analytics />
         </main>
