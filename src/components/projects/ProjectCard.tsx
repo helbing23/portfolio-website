@@ -1,8 +1,8 @@
 // ProjectCard.tsx
 import { Project } from "@/types/project";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import AnimatedProjectPreview from "./AnimatedProjectPreview";
 
 interface ProjectCardProps {
   project: Project;
@@ -13,15 +13,14 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
   return (
     <div 
       tabIndex={0}
-            className={`flex flex-col h-[400px] rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-gradient-gray border border-white-100/[0.2] ${className}`}
+      className={`flex flex-col h-[400px] rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-gradient-gray border border-white-100/[0.2] ${className}`}
     >
       <div className="relative w-full h-48">
-        <Image
+        <AnimatedProjectPreview
+          staticImage={project.imageUrl}
+          animatedGif={project.previewGif}
           alt={project.title}
-          src={project.imageUrl}
-          fill
-          className="object-cover rounded-lg"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-lg"
         />
       </div>
       
@@ -57,10 +56,14 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
               </Link>
             )}
             {project.githubUrl && (
-              <Link href={project.githubUrl}  target="_blank" rel="noopener noreferrer"
-                className="gradient-button px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-700">
-                  GitHub
-                </Link>
+              <Link 
+                href={project.githubUrl}  
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="gradient-button px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-700"
+              >
+                GitHub
+              </Link>
             )}
           </div>
         </div>

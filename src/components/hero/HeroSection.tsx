@@ -81,14 +81,14 @@ export default function HeroSection() {
         <div className="relative lg:w-1/2 max-h-96 max-w-sm overflow-hidden rounded-full shadow-xl lg:w-full">
           <div className="animate-fade-in-up">
             <HeroImage
-              src="/images/Banner-hero-helbin.png"
+              src="/images/banner-hero-helbin.png"
               alt="Cartoon face Helbin"
               priority
             />
           </div>
           <div className="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100">
             <HeroImage
-              src="/images/Banner-hero-helbin-hover.png"
+              src="/images/banner-hero-helbin-hover.png"
               alt="Cartoon face Helbin on hover"
               priority={false}
             />
