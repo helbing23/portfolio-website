@@ -43,3 +43,7 @@
 - Stick to the Conventional Commit style already in history (`feat(scope): …`, `fix(scope): …`, `chore(scope): …`) and keep scopes aligned with folders like `header` or `insights`.
 - PR descriptions should explain intent, link related issues, enumerate new routes or env vars, and include before/after screenshots for UI work.
 - Rebase on `main`, keep commits focused, and verify `npm run build && npm run start` locally before requesting review.
+
+## Agent Workflow
+- Kick off every session by running `/init` (or collecting the same context manually) so you know the current repo shape before editing.
+- When you uncover repo-specific gotchas or process changes, reflect them back into this file to help the next agent ramp faster.

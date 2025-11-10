@@ -202,6 +202,26 @@ const projects: Project[] = [
     category: "Freelancing"
   },
   {
+    title: "GiftBoho",
+    description: "Gift shop offering curated, handcrafted gifts like hampers, bags, and unique finds, perfect for special occasions or thoughtful gestures.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+    imageUrl: "/images/thumbnail-giftboho.png",
+    previewGif: "/images/thumbnail-giftboho.png",
+    liveUrl: "https://giftboho.com",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "Location Square",
+    description: "This website offers a range of cleaning services, including deep cleaning, plumbing, electrical testing, and gardening.",
+    technologies: ["Next.js", "Nest.js", "AWS"],
+    imageUrl: "/images/thumbnail-locationsquare.png",
+    previewGif: "/images/thumbnail-locationsquare.png",
+    liveUrl: "https://locationsquare.com/",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
     title: "Nature's Healthcare",
     description: "A trusted online platform delivering high-quality nutritional supplements and vitamins at competitive prices, underpinned by dedicated customer care.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -275,8 +295,8 @@ const projects: Project[] = [
     title: "Invicta India",
     description: "A corporate website providing comprehensive BPO and ICT solutions with a focus on customer engagement, market research, and operational excellence.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/gifs/thumbnail-scroll-default.gif",
-    previewGif: "/gifs/thumbnail-scroll-default.gif",
+    imageUrl: "/images/thumbnail-invictaindia.png",
+    previewGif: "/images/thumbnail-invictaindia.png",
     liveUrl: "https://invictaindia.in/",
     githubUrl: "",
     category: "Corporate"
@@ -289,6 +309,15 @@ const projects: Project[] = [
     previewGif: "/gifs/thumbnail-scroll-helbinrapheal.gif",
     liveUrl: "https://helbinrapheal.vercel.app",
     githubUrl: "https://github.com/helbing23",
+    category: "Personal"
+  },
+  {
+    title: "Therapyway Ltd",
+    description: "UK's marketplace for independent occupational and speech therapists.",
+    technologies: ["Next.js", "Supabase", "Amplify"],
+    imageUrl: "/images/thumbnail-therapyway.png",
+    previewGif: "/images/thumbnail-therapyway.png",
+    liveUrl: "https://www.therapyway.co.uk/",
     category: "Personal"
   },
   // Add more projects here with their respective categories

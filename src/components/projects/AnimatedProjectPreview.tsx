@@ -10,6 +10,13 @@ interface AnimatedProjectPreviewProps {
   className?: string;
 }
 
+type NavigatorWithConnection = Navigator & {
+  connection?: {
+    saveData?: boolean;
+    effectiveType?: string;
+  };
+};
+
 const AnimatedProjectPreview: React.FC<AnimatedProjectPreviewProps> = ({
   staticImage,
   animatedGif,
@@ -26,11 +33,13 @@ const AnimatedProjectPreview: React.FC<AnimatedProjectPreviewProps> = ({
 
   // Check connection speed
   useEffect(() => {
-    if (typeof navigator !== 'undefined' && 'connection' in navigator) {
-      const connection = (navigator as any).connection;
+    if (typeof navigator !== 'undefined') {
+      const connection = (navigator as NavigatorWithConnection).connection;
       if (connection) {
-        const isSlowConn = connection.saveData || 
-          ['slow-2g', '2g', '3g'].includes(connection.effectiveType);
+        const effectiveType = connection.effectiveType ?? '';
+        const isSlowConn =
+          connection.saveData === true ||
+          ['slow-2g', '2g', '3g'].includes(effectiveType);
         setIsSlowConnection(isSlowConn);
       }
     }
