@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright (Desktop First) */}
         <div className="mt-2 md:mt-0 text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} helbinrapheal.com All rights reserved.
+          &copy; {new Date().getFullYear()} helbinrapheal.vercel.app All rights reserved.
         </div>
       </Container>
     </footer>

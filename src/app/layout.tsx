@@ -21,7 +21,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.helbinrapheal.com"),
+  metadataBase: new URL("https://helbinrapheal.vercel.app"),
   title: {
     default: "Helbin Rapheal | Experienced Software Developer & AI Engineer",
     template: "%s | Helbin Rapheal",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Helbin Rapheal | Experienced Software Developer & Aspiring AI Engineer",
     description:
       "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS (WordPress, Drupal, Shopify, Strapi), SEO, and web hosting.",
-    url: "https://www.helbinrapheal.com",
+    url: "https://helbinrapheal.vercel.app",
     type: "website",
     locale: "en_GB",
     images: [
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "Person",
               name: "Helbin Rapheal",
               jobTitle: "Software Developer & AI Engineer",
-              url: "https://www.helbinrapheal.com",
+              url: "https://helbinrapheal.vercel.app",
               sameAs: [
                 "https://linkedin.com/in/helbinrapheal",
                 "https://github.com/helbing23",

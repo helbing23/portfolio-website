@@ -103,3 +103,15 @@
 .section-heading {
   @apply text-3xl font-bold text-white md:text-4xl;
 }
+
+/* Calendly inline widget custom styling */
+.calendly-inline-widget iframe {
+  border-radius: 0.75rem;
+}
+
+/* Dark mode support for Calendly */
+.dark .calendly-inline-widget {
+  --calendly-background: hsl(var(--background));
+  --calendly-text: hsl(var(--foreground));
+  --calendly-primary: #7c5bff;
+}
