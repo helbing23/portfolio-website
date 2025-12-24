@@ -8,7 +8,9 @@ import {
   SiJavascript, 
   SiNextdotjs,
   SiPostgresql, 
-  SiVercel 
+  SiSupabase,
+  SiVercel,
+  SiAmazonwebservices
 } from "react-icons/si";
 
 interface TechIcon {
@@ -30,9 +32,13 @@ const techStacks: Record<string, TechIcon[]> = {
     { icon: <FaReact />, name: "React", color: "text-blue-400" },
     { icon: <SiNextdotjs />, name: "Next.js", color: "" },
   ],
-  "Database & Deployment": [
+  "Database": [
     { icon: <SiPostgresql />, name: "PostgreSQL", color: "text-blue-400" },
+    { icon: <SiSupabase />, name: "Supabase", color: "text-blue-400" },
+  ],
+  "Cloud & Infrastructure": [
     { icon: <SiVercel />, name: "Vercel", color: "" },
+    { icon: <SiAmazonwebservices />, name: "AWS", color: "text-orange-500" },
   ],
 };
 

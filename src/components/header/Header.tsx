@@ -129,7 +129,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex mx-auto items-center gap-6 absolute left-1/2 transform -translate-x-1/2 shadow-md bg-white dark:bg-black dark:border-white/[0.2] border px-4 py-2 rounded-xl">
+        <div className="hidden md:flex mx-auto items-center gap-6 absolute left-1/2 transform -translate-x-1/2 shadow-md bg-white/70 backdrop-blur-md dark:bg-black/70 dark:border-white/[0.2] border border-gray-200/50 px-4 py-2 rounded-xl">
           {navItems.map((item) => (
             <Link
               key={item.path}

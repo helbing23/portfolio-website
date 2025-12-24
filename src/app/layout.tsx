@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import ScrollToTop from "@/components/footer/ScrollToTop";
+import LiquidBackground from "@/components/ui/LiquidBackground";
 import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
@@ -145,6 +146,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col font-sans`}
         suppressHydrationWarning={true}
       >
+        <LiquidBackground />
         <a href="#main-content" className="sr-only focus:not-sr-only">
           Skip to main content
         </a>

@@ -12,6 +12,56 @@ const projects: Project[] = [
     category: "Freelancing"
   },
   {
+    title: "Shantilal Real Estate",
+    description: "A seasoned real estate service provider with decades of experience offering residential and commercial property solutions in Goa.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "/images/thumbnail-shantilalrealestate.jpeg",
+    previewGif: "/gifs/thumbnail-scroll-shantilalrealestate.gif",
+    liveUrl: "https://shantilalrealestate.com/",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "GiftBoho",
+    description: "Gift shop offering curated, handcrafted gifts like hampers, bags, and unique finds, perfect for special occasions or thoughtful gestures.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+    imageUrl: "/images/thumbnail-giftboho.png",
+    previewGif: "/images/thumbnail-giftboho.png",
+    liveUrl: "https://giftboho.com",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "Location Square",
+    description: "This website offers a range of cleaning services, including deep cleaning, plumbing, electrical testing, and gardening.",
+    technologies: ["Next.js", "Nest.js", "AWS"],
+    imageUrl: "/images/thumbnail-locationsquare.png",
+    previewGif: "/images/thumbnail-locationsquare.png",
+    liveUrl: "https://locationsquare.com/",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "Maven Match Maker",
+    description: "A modern matchmaking platform that leverages trusted personal recommendations to create authentic relationships, moving beyond impersonal algorithms.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "/gifs/thumbnail-scroll-mavenmatchmaker.gif",
+    previewGif: "/gifs/thumbnail-scroll-mavenmatchmaker.gif",
+    liveUrl: "https://mavenmatchmaker.com/",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "Atithyam",
+    description: "A hospitality platform blending tradition with modern luxury to deliver curated guest experiences across exclusive destinations.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "/gifs/thumbnail-scroll-atithyam.gif",
+    previewGif: "/gifs/thumbnail-scroll-atithyam.gif",
+    liveUrl: "https://www.atithyam.com/",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
     title: "Wedoogle",
     description: "Dynamic e-commerce platform for wedding & event decor and gifts.",
     technologies: ["ASP.NET MVC", "Bootstrap", "E-commerce"],
@@ -38,16 +88,6 @@ const projects: Project[] = [
     imageUrl: "/images/thumbnail-europereels.jpeg",
     previewGif: "/gifs/thumbnail-scroll-europereels.gif",
     liveUrl: "https://europereels.com",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
-    title: "Maven Match Maker",
-    description: "A modern matchmaking platform that leverages trusted personal recommendations to create authentic relationships, moving beyond impersonal algorithms.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/gifs/thumbnail-scroll-mavenmatchmaker.gif",
-    previewGif: "/gifs/thumbnail-scroll-mavenmatchmaker.gif",
-    liveUrl: "https://mavenmatchmaker.com/",
     githubUrl: "",
     category: "Freelancing"
   },
@@ -102,16 +142,6 @@ const projects: Project[] = [
     category: "Freelancing"
   },
   {
-    title: "Atithyam",
-    description: "A hospitality platform blending tradition with modern luxury to deliver curated guest experiences across exclusive destinations.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/gifs/thumbnail-scroll-atithyam.gif",
-    previewGif: "/gifs/thumbnail-scroll-atithyam.gif",
-    liveUrl: "https://www.atithyam.com/",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
     title: "River Dreamers RV Park",
     description: "An RV park offering full hook-ups and outdoor adventures along the scenic Colorado River with daily, weekly, and monthly stays.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -128,16 +158,6 @@ const projects: Project[] = [
     imageUrl: "/images/thumbnail-indiainvites.jpeg",
     previewGif: "/gifs/thumbnail-scroll-indiainvites.gif",
     liveUrl: "https://indiainvites.com/",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
-    title: "Shantilal Real Estate",
-    description: "A seasoned real estate service provider with decades of experience offering residential and commercial property solutions in Goa.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/images/thumbnail-shantilalrealestate.jpeg",
-    previewGif: "/gifs/thumbnail-scroll-shantilalrealestate.gif",
-    liveUrl: "https://shantilalrealestate.com/",
     githubUrl: "",
     category: "Freelancing"
   },
@@ -198,26 +218,6 @@ const projects: Project[] = [
     imageUrl: "/gifs/thumbnail-scroll-ponyupsalon.gif",
     previewGif: "/gifs/thumbnail-scroll-ponyupsalon.gif",
     liveUrl: "https://ponyupsalon.com/",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
-    title: "GiftBoho",
-    description: "Gift shop offering curated, handcrafted gifts like hampers, bags, and unique finds, perfect for special occasions or thoughtful gestures.",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    imageUrl: "/images/thumbnail-giftboho.png",
-    previewGif: "/images/thumbnail-giftboho.png",
-    liveUrl: "https://giftboho.com",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
-    title: "Location Square",
-    description: "This website offers a range of cleaning services, including deep cleaning, plumbing, electrical testing, and gardening.",
-    technologies: ["Next.js", "Nest.js", "AWS"],
-    imageUrl: "/images/thumbnail-locationsquare.png",
-    previewGif: "/images/thumbnail-locationsquare.png",
-    liveUrl: "https://locationsquare.com/",
     githubUrl: "",
     category: "Freelancing"
   },

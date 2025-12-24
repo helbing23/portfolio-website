@@ -11,9 +11,9 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, className }: ProjectCardProps) => {
   return (
-    <div 
+    <div
       tabIndex={0}
-      className={`flex flex-col h-[400px] rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-white-100/[0.2] ${className}`}
+      className={`flex flex-col h-[400px] rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white/70 border border-white-100/[0.2] ${className}`}
     >
       <div className="relative w-full h-48">
         <AnimatedProjectPreview

@@ -21,11 +21,11 @@ export default function AboutSection() {
             </header>
             <article className="mb-8">
                 <p className="mb-6">
-                    I&apos;m an Experienced Software Developer, specializing in creating engaging, user-centric web applications. My expertise lies in modern web technologies, including ReactJS, SvelteJS, and Tailwind CSS, along with extensive experience in CMS platforms like Drupal and WordPress.
+                    I&apos;m an Experienced Software Developer, specializing in creating engaging, user-centric web applications. My expertise lies in modern front-end development with React and Next.js, backed by cloud infrastructure expertise in AWS.
                 </p>
                 <CurrentTechStack />
                 <p className="my-6">
-                    I&apos;m exploring new challenges in web development while upskilling myself to become an AI Engineer. My goal is to integrate AI into applications, designing innovative solutions that bridge the gap between cutting-edge technology and user needs.
+                Currently, I&apos;m co-founding <a href="https://www.therapyway.co.uk/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-purple-600 transition-colors underline hover:no-underline">@therapyway</a> as CTO, a healthcare SaaS platform connecting HCPC-registered therapists with clients across the UK. Alongside this, I&apos;m available as a fractional CTO for startups and growing companies. I help teams establish technical foundations, make architecture decisions, and bridge the gap between business goals and development execution.
                 </p>
             </article>
             

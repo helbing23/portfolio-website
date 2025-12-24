@@ -86,7 +86,7 @@ const Recommendations = () => {
         {recommendations.map((recommendation, index) => (
           <div
             key={index}
-            className={`absolute w-full transition-opacity duration-500 rounded-xl shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border ${
+            className={`absolute w-full transition-opacity duration-500 rounded-xl shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white/70 backdrop-blur-sm border border-gray-200/50 ${
               currentSlide === index 
                 ? 'opacity-100 z-10' 
                 : 'opacity-0 z-0 pointer-events-none'

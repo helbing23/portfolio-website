@@ -53,7 +53,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setText(prevText => prevText === 'Freelancer' ? 'Aspiring AI Engineer' : 'Freelancer');
+      setText(prevText => prevText === 'Aspiring CTO' ? 'Aspiring AI Engineer' : 'Aspiring CTO');
     }, 3000); // Change text every 3 seconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
