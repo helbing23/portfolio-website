@@ -62,32 +62,19 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
   openGraph: {
-    title: "Helbin Rapheal | Experienced Software Developer & Aspiring AI Engineer",
+    title: "Helbin Rapheal | Experienced Software Developer & AI Engineer",
     description:
       "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS (WordPress, Drupal, Shopify, Strapi), SEO, and web hosting.",
     url: "https://helbinrapheal.vercel.app",
     type: "website",
     locale: "en_GB",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Helbin Rapheal - Software Developer",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helbin Rapheal | Experienced Software Developer & Aspiring AI Engineer",
+    title: "Helbin Rapheal | Experienced Software Developer & AI Engineer",
     description:
       "Helbin Rapheal crafts impactful digital solutions for business growth. Specializes in web design, app development, custom CMS (WordPress, Drupal, Shopify, Strapi), SEO, and web hosting.",
-    creator: "@yourtwitterhandle",
-    images: "/twitter-image.jpg",
   },
 };
 
@@ -106,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Calendly integration */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <script src="https://assets.calendly.com/assets/external/widget.js" async defer />
-        {/* Structured Data */}
+        {/* Structured Data - Person Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -116,6 +103,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: "Helbin Rapheal",
               jobTitle: "Software Developer & AI Engineer",
               url: "https://helbinrapheal.vercel.app",
+              description: "Experienced software developer specializing in web development, React, Next.js, and AI engineering.",
+              email: "helbinrapheal24@gmail.com",
               sameAs: [
                 "https://linkedin.com/in/helbinrapheal",
                 "https://github.com/helbing23",
@@ -127,7 +116,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "React",
                 "Next.js",
                 "TypeScript",
-                "Tailwind",
+                "JavaScript",
+                "Tailwind CSS",
                 "WordPress",
                 "Drupal",
                 "Strapi",
@@ -135,9 +125,51 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "AI Engineering",
                 "RAG",
                 "AI Agents",
-                "AIML",
+                "Machine Learning",
                 "LLM",
+                "Full Stack Development",
               ],
+              alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "University of Sunderland",
+              },
+            }),
+          }}
+        />
+        {/* Structured Data - Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Helbin Rapheal - Software Developer Portfolio",
+              url: "https://helbinrapheal.vercel.app",
+              description: "Professional portfolio showcasing web development projects, technical insights, and software engineering services.",
+              author: {
+                "@type": "Person",
+                name: "Helbin Rapheal",
+              },
+              inLanguage: "en-GB",
+            }),
+          }}
+        />
+        {/* Structured Data - Professional Service Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Helbin Rapheal - Web Development Services",
+              url: "https://helbinrapheal.vercel.app/services",
+              description: "Professional web development services including React/Next.js development, CMS solutions, and SEO optimization.",
+              provider: {
+                "@type": "Person",
+                name: "Helbin Rapheal",
+              },
+              areaServed: "Worldwide",
+              availableLanguage: "English",
             }),
           }}
         />

@@ -15,6 +15,11 @@ export const metadata: Metadata = {
       "Schedule a consultation or meeting with Helbin Rapheal",
     url: "https://helbinrapheal.vercel.app/booking",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Meeting | Helbin Rapheal",
+    description: "Schedule a consultation or meeting with Helbin Rapheal. Choose a convenient time slot for project discussions.",
+  },
 };
 
 export default function BookingPage() {
