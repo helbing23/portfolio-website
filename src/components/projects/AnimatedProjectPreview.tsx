@@ -54,9 +54,15 @@ const AnimatedProjectPreview: React.FC<AnimatedProjectPreviewProps> = ({
     }
   }, [inView, animatedGif, isSlowConnection]);
 
+  // Placeholder image data URI (1x1 gray pixel)
+  const placeholderImage = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="200"%3E%3Crect width="400" height="200" fill="%23e5e7eb"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="%239ca3af"%3ENo Preview Available%3C/text%3E%3C/svg%3E';
+
   // Determine which image to show
   const showGif = isHovered && animatedGif && isGifLoaded && !isSlowConnection;
-  const imageToShow = showGif ? animatedGif : (staticImage || '/images/placeholder.jpg');
+  const imageToShow = showGif ? animatedGif : (staticImage || placeholderImage);
+
+  // Check if the image is a GIF (either the current image or the static image could be a GIF)
+  const isGif = imageToShow.endsWith('.gif');
 
   return (
     <div
@@ -71,7 +77,7 @@ const AnimatedProjectPreview: React.FC<AnimatedProjectPreviewProps> = ({
         src={imageToShow}
         alt={alt}
         fill
-        unoptimized={!!showGif}
+        unoptimized={isGif}
         className={`object-cover transition-opacity duration-300`}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />

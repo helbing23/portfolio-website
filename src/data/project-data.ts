@@ -185,8 +185,8 @@ const projects: Project[] = [
     title: "Kangaroo Paints",
     description: "A prominent paint manufacturer specializing in innovative solutions for architectural, automotive, and industrial applications with an expansive regional reach.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/gifs/thumbnail-scroll-default.gif",
-    previewGif: "/gifs/thumbnail-scroll-default.gif",
+    imageUrl: "",
+    previewGif: "",
     liveUrl: "https://kangarupaints.com/",
     githubUrl: "",
     category: "Freelancing"
