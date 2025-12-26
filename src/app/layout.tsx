@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "../styles/globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -92,7 +93,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/manifest.json" />
         {/* Calendly integration */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-        <script src="https://assets.calendly.com/assets/external/widget.js" async defer />
         {/* Structured Data - Person Schema */}
         <script
           type="application/ld+json"
@@ -189,6 +189,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <ScrollToTop />
         <Footer />
+        {/* Calendly Script - Load with beforeInteractive strategy */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="beforeInteractive"
+        />
       </body>
     </html>
   );
