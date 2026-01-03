@@ -189,10 +189,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <ScrollToTop />
         <Footer />
-        {/* Calendly Script - Load with beforeInteractive strategy */}
+        {/* Calendly Script - Load after page is interactive */}
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
       </body>
     </html>
