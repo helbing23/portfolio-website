@@ -222,6 +222,16 @@ const projects: Project[] = [
     category: "Freelancing"
   },
   {
+    title: "Red CRM",
+    description: "A real estate business CRM designed for sales agents' day-to-day operations, streamlining lead management, property tracking, and client communications.",
+    technologies: ["Next.js", "Nest.js", "AWS"],
+    imageUrl: "/images/thumbnail-redcrm.png",
+    previewGif: "/images/thumbnail-redcrm.png",
+    liveUrl: "",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
     title: "Nature's Healthcare",
     description: "A trusted online platform delivering high-quality nutritional supplements and vitamins at competitive prices, underpinned by dedicated customer care.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -318,6 +328,26 @@ const projects: Project[] = [
     imageUrl: "/images/thumbnail-therapyway.png",
     previewGif: "/images/thumbnail-therapyway.png",
     liveUrl: "https://www.therapyway.co.uk/",
+    category: "Personal"
+  },
+  {
+    title: "Therapyway App",
+    description: "A clinic suite SaaS platform for therapists and small clinics to manage clients, appointments, and video consultations. Serves both B2B and B2C markets as a comprehensive practice management solution.",
+    technologies: ["Next.js", "AWS", "Jitsi"],
+    imageUrl: "/images/thumbnail-therapyway-app.png",
+    previewGif: "/images/thumbnail-therapyway-app.png",
+    liveUrl: "https://app.therapyway.co.uk",
+    githubUrl: "",
+    category: "Personal"
+  },
+  {
+    title: "SoloTrader CRM",
+    description: "A comprehensive business management application for sole traders and freelancers in software development, featuring lead management, proposal generation, client conversion, project management, team coordination, accounting, and invoice generation.",
+    technologies: ["Next.js", "Nest.js", "Vercel"],
+    imageUrl: "/images/thumbnail-solotradercrm.png",
+    previewGif: "/images/thumbnail-solotradercrm.png",
+    liveUrl: "",
+    githubUrl: "",
     category: "Personal"
   },
   // Add more projects here with their respective categories
