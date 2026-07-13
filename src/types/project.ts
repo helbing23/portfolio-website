@@ -6,5 +6,6 @@ export interface Project {
     previewGif?: string; // Optional GIF preview URL
     liveUrl?: string;
     githubUrl?: string;
+    caseStudySlug?: string; // Links to /projects/case-study/[slug]
     category?: string;
 }

@@ -2,6 +2,80 @@ import { Project } from "@/types/project";
 
 const projects: Project[] = [
   {
+    title: "Luxillas",
+    description: "A members-only luxury villa club offering curated holiday stays, concierge services, and application-based membership.",
+    technologies: ["Next.js", "TypeScript", "Vercel"],
+    imageUrl: "",
+    previewGif: "",
+    liveUrl: "https://www.luxillas.com/",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "Lee Care Services",
+    description: "A website for an independent home care provider in Colchester and Essex, with service pages, free assessment booking, and a careers application flow.",
+    technologies: ["Next.js", "Framer Motion", "Resend"],
+    imageUrl: "/images/thumbnail-leecare.png",
+    previewGif: "/images/thumbnail-leecare.png",
+    liveUrl: "https://www.leecareservices.co.uk",
+    githubUrl: "",
+    caseStudySlug: "lee-care-services",
+    category: "Freelancing"
+  },
+  {
+    title: "FirstVacay",
+    description: "A travel platform for planning and booking curated vacation packages, with online payments and a headless CMS powering the content.",
+    technologies: ["Next.js", "Strapi", "Razorpay"],
+    imageUrl: "/images/thumbnail-firstvacay.png",
+    previewGif: "/images/thumbnail-firstvacay.png",
+    liveUrl: "https://firstvacay.com",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
+    title: "Ripple NDT Invoicing",
+    description: "A tax invoicing system for a nondestructive testing centre, handling invoice generation, client records, and billing workflows.",
+    technologies: ["Next.js", "Prisma", "Supabase"],
+    imageUrl: "",
+    previewGif: "",
+    liveUrl: "",
+    githubUrl: "",
+    caseStudySlug: "ripple-ndt-invoicing",
+    category: "Freelancing"
+  },
+  {
+    title: "Red CRM",
+    description: "A real estate business CRM designed for sales agents' day-to-day operations, streamlining lead management, property tracking, and client communications.",
+    technologies: ["Next.js", "Nest.js", "AWS"],
+    imageUrl: "/images/thumbnail-redcrm.png",
+    previewGif: "/images/thumbnail-redcrm.png",
+    liveUrl: "",
+    githubUrl: "",
+    caseStudySlug: "red-crm",
+    category: "Freelancing"
+  },
+  {
+    title: "Location Square",
+    description: "This website offers a range of cleaning services, including deep cleaning, plumbing, electrical testing, and gardening.",
+    technologies: ["Next.js", "Nest.js", "AWS"],
+    imageUrl: "/images/thumbnail-locationsquare.png",
+    previewGif: "/images/thumbnail-locationsquare.png",
+    liveUrl: "https://locationsquare.com/",
+    githubUrl: "",
+    caseStudySlug: "location-square",
+    category: "Freelancing"
+  },
+  {
+    title: "GiftBoho",
+    description: "Gift shop offering curated, handcrafted gifts like hampers, bags, and unique finds, perfect for special occasions or thoughtful gestures.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+    imageUrl: "/images/thumbnail-giftboho.png",
+    previewGif: "/images/thumbnail-giftboho.png",
+    liveUrl: "https://giftboho.com",
+    githubUrl: "",
+    category: "Freelancing"
+  },
+  {
     title: "Creddinv",
     description: "Developed a responsive web platform that bridges founders and investors.",
     technologies: ["React.js", "Next.js", "Bootstrap", "Figma"],
@@ -18,26 +92,6 @@ const projects: Project[] = [
     imageUrl: "/images/thumbnail-shantilalrealestate.jpeg",
     previewGif: "/gifs/thumbnail-scroll-shantilalrealestate.gif",
     liveUrl: "https://shantilalrealestate.com/",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
-    title: "GiftBoho",
-    description: "Gift shop offering curated, handcrafted gifts like hampers, bags, and unique finds, perfect for special occasions or thoughtful gestures.",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    imageUrl: "/images/thumbnail-giftboho.png",
-    previewGif: "/images/thumbnail-giftboho.png",
-    liveUrl: "https://giftboho.com",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
-    title: "Location Square",
-    description: "This website offers a range of cleaning services, including deep cleaning, plumbing, electrical testing, and gardening.",
-    technologies: ["Next.js", "Nest.js", "AWS"],
-    imageUrl: "/images/thumbnail-locationsquare.png",
-    previewGif: "/images/thumbnail-locationsquare.png",
-    liveUrl: "https://locationsquare.com/",
     githubUrl: "",
     category: "Freelancing"
   },
@@ -222,16 +276,6 @@ const projects: Project[] = [
     category: "Freelancing"
   },
   {
-    title: "Red CRM",
-    description: "A real estate business CRM designed for sales agents' day-to-day operations, streamlining lead management, property tracking, and client communications.",
-    technologies: ["Next.js", "Nest.js", "AWS"],
-    imageUrl: "/images/thumbnail-redcrm.png",
-    previewGif: "/images/thumbnail-redcrm.png",
-    liveUrl: "",
-    githubUrl: "",
-    category: "Freelancing"
-  },
-  {
     title: "Nature's Healthcare",
     description: "A trusted online platform delivering high-quality nutritional supplements and vitamins at competitive prices, underpinned by dedicated customer care.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -312,22 +356,14 @@ const projects: Project[] = [
     category: "Corporate"
   },
   {
-    title: "Portfolio Website",
-    description: "Developed a personal portfolio website to showcase my skills and projects.",
-    technologies: ["React.js", "Next.js", "Tailwind CSS", "TypeScript"],
-    imageUrl: "/gifs/thumbnail-scroll-helbinrapheal.gif",
-    previewGif: "/gifs/thumbnail-scroll-helbinrapheal.gif",
-    liveUrl: "https://helbinrapheal.vercel.app",
-    githubUrl: "https://github.com/helbing23",
-    category: "Personal"
-  },
-  {
-    title: "Therapyway Ltd",
-    description: "UK's marketplace for independent occupational and speech therapists.",
-    technologies: ["Next.js", "Supabase", "Amplify"],
-    imageUrl: "/images/thumbnail-therapyway.png",
-    previewGif: "/images/thumbnail-therapyway.png",
-    liveUrl: "https://www.therapyway.co.uk/",
+    title: "Career-Ops Agentic OS",
+    description: "An autonomous agentic OS built on top of the open source Career-Ops project, running unattended multi-agent job search pipelines with scheduled auto-apply loops.",
+    technologies: ["Claude Code", "Node.js", "AI Agents"],
+    imageUrl: "",
+    previewGif: "",
+    liveUrl: "",
+    githubUrl: "https://github.com/helbing23/career-ops",
+    caseStudySlug: "career-ops-agentic-os",
     category: "Personal"
   },
   {
@@ -341,6 +377,36 @@ const projects: Project[] = [
     category: "Personal"
   },
   {
+    title: "Therapyway Ltd",
+    description: "UK's marketplace for independent occupational and speech therapists.",
+    technologies: ["Next.js", "Supabase", "Amplify"],
+    imageUrl: "/images/thumbnail-therapyway.png",
+    previewGif: "/images/thumbnail-therapyway.png",
+    liveUrl: "https://www.therapyway.co.uk/",
+    category: "Personal"
+  },
+  {
+    title: "Shreyanshs CIC",
+    description: "A UK-India social enterprise empowering women and youth through education, IT training, and ethical recruitment. Built and maintained as CTO & Strategic Technology Advisor.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    imageUrl: "/images/thumbnail-shreyanshs.png",
+    previewGif: "/images/thumbnail-shreyanshs.png",
+    liveUrl: "https://shreyanshs.org/",
+    githubUrl: "",
+    category: "Personal"
+  },
+  {
+    title: "Shreyanshs App",
+    description: "A marketplace platform connecting mentees with mentors, bringing SRE training, mentorship, and career development together in one platform.",
+    technologies: ["Next.js", "Supabase"],
+    imageUrl: "",
+    previewGif: "",
+    liveUrl: "",
+    githubUrl: "",
+    caseStudySlug: "shreyanshs-app",
+    category: "Personal"
+  },
+  {
     title: "SoloTrader CRM",
     description: "A comprehensive business management application for sole traders and freelancers in software development, featuring lead management, proposal generation, client conversion, project management, team coordination, accounting, and invoice generation.",
     technologies: ["Next.js", "Nest.js", "Vercel"],
@@ -348,6 +414,17 @@ const projects: Project[] = [
     previewGif: "/images/thumbnail-solotradercrm.png",
     liveUrl: "",
     githubUrl: "",
+    caseStudySlug: "solotrader-crm",
+    category: "Personal"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Developed a personal portfolio website to showcase my skills and projects.",
+    technologies: ["React.js", "Next.js", "Tailwind CSS", "TypeScript"],
+    imageUrl: "/gifs/thumbnail-scroll-helbinrapheal.gif",
+    previewGif: "/gifs/thumbnail-scroll-helbinrapheal.gif",
+    liveUrl: "https://helbinrapheal.vercel.app",
+    githubUrl: "https://github.com/helbing23",
     category: "Personal"
   },
   // Add more projects here with their respective categories

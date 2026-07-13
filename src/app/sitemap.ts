@@ -1,8 +1,16 @@
 import { MetadataRoute } from 'next'
+import caseStudies from '@/data/case-study-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://helbinrapheal.vercel.app'
   const currentDate = new Date()
+
+  const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((study) => ({
+    url: `${baseUrl}/projects/case-study/${study.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
 
   return [
     {
@@ -71,5 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    ...caseStudyRoutes,
   ]
 }

@@ -28,7 +28,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
         <h3 className="text-sm dark:text-gray-200 font-semibold my-2">
           {project.title}
         </h3>
-        <p className="text-gray-400 dark:text-gray-300 text-xs flex-grow mb-1">
+        <p className="text-gray-400 dark:text-gray-300 text-xs flex-grow mb-1 line-clamp-4">
           {project.description}
         </p>
         
@@ -56,13 +56,21 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
               </Link>
             )}
             {project.githubUrl && (
-              <Link 
-                href={project.githubUrl}  
-                target="_blank" 
+              <Link
+                href={project.githubUrl}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="gradient-button px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-700"
               >
                 GitHub
+              </Link>
+            )}
+            {project.caseStudySlug && (
+              <Link
+                href={`/projects/case-study/${project.caseStudySlug}`}
+                className="gradient-button px-3 py-1 rounded-md text-xs"
+              >
+                Case Study
               </Link>
             )}
           </div>
