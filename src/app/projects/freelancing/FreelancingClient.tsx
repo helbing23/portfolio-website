@@ -47,7 +47,7 @@ export default function FreelancingClient() {
     };
 
     return (
-        <section className="py-20 px-4 max-w-5xl mx-auto">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             {/* Freelancing Section */}
             <div className="mb-16">
                 <div className="mb-8">

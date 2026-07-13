@@ -3,19 +3,21 @@ import ProjectsClient from "./ProjectsClient";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Explore Helbin Rapheal's portfolio of freelancing, corporate, and personal projects showcasing expertise in React, Next.js, Drupal, WordPress, and modern web development technologies.",
+  description: "Freelance, corporate and personal projects by Helbin Rapheal: marketplaces, CRMs and client sites built with React, Next.js, Drupal and WordPress.",
   alternates: {
     canonical: "/projects",
   },
   openGraph: {
     title: "Projects | Helbin Rapheal",
-    description: "Portfolio of web development projects including freelancing, corporate, and personal work in React, Next.js, and modern frameworks.",
+    description: "Freelance, corporate and personal projects: marketplaces, CRMs and client sites in React and Next.js.",
     url: "https://helbinrapheal.vercel.app/projects",
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Projects | Helbin Rapheal",
-    description: "Portfolio of web development projects including freelancing, corporate, and personal work.",
+    description: "Freelance, corporate and personal projects: marketplaces, CRMs and client sites in React and Next.js.",
+    images: ["/twitter-image"],
   },
 };
 

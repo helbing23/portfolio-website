@@ -45,7 +45,7 @@ export default function ProjectSection() {
 
   return (
     <ReactLenis root>
-      <section className='py-10 max-w-5xl mx-auto'>
+      <section className='py-16 md:py-24'>
         <div className='grid lg:grid-cols-2'>
           <div className='lg:sticky lg:top-0 lg:h-screen flex items-center justify-center'>
             <div className="md:w-full">
@@ -78,11 +78,11 @@ export default function ProjectSection() {
                   </span>
                   <MdOutlineDoubleArrow className="ml-2" />
                 </Link>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/booking"
                   className="text-sm relative flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors overflow-hidden"
                 >
-                  Hire Me
+                  Book an intro call
                   <div className="absolute inset-0 flex w-full animate-shine-infinite blur-[12px]">
                     <div className="relative h-full w-8 bg-white/30" />
                   </div>

@@ -1,4 +1,4 @@
 export const MAINTENANCE = {
   insights: true,
-  services: true,
+  services: false,
 } as const;

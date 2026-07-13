@@ -12,7 +12,7 @@ export default function Maintenance({
   ctaLabel = "Go back home",
 }: MaintenanceProps) {
   return (
-    <section className="container mx-auto px-4 py-20 text-center">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
       <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-gradient-gray p-8 shadow-md">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{title}</h1>
         <p className="text-muted-foreground mb-8">{description}</p>

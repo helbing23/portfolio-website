@@ -15,18 +15,36 @@ export default function AboutSection() {
     };
 
     return (
-        <section id="about" className="py-10 max-w-5xl mx-auto">
+        <section id="about" className="py-16 md:py-24">
             <header>
                 <h2 className="text-3xl font-bold mb-6">About Me</h2>
             </header>
             <article className="mb-8">
+                <p className="mb-6 font-semibold">
+                    I&apos;m a CTO you can hire by the day, and a senior engineer your agency can hand work to without babysitting it.
+                </p>
                 <p className="mb-6">
-                    I&apos;m an Experienced Software Developer, specializing in creating engaging, user-centric web applications. My expertise lies in modern front-end development with React and Next.js, backed by cloud infrastructure expertise in AWS.
+                    I&apos;m co-founder &amp; CTO at <a href="https://www.therapyway.co.uk/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-purple-600 transition-colors underline hover:no-underline">@therapyway</a>, where I lead a team of two developers and three interns building the UK&apos;s marketplace and clinic-management suite for independent therapists. Next.js, Supabase, AWS and secure video consultations, from architecture to roadmap. I&apos;m also CTO &amp; Strategic Technology Advisor at Shreyanshs CIC, a non-executive role covering architecture reviews and technical direction.
                 </p>
                 <CurrentTechStack />
                 <p className="my-6">
-                Currently, I&apos;m co-founding <a href="https://www.therapyway.co.uk/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-purple-600 transition-colors underline hover:no-underline">@therapyway</a> as CTO, a healthcare SaaS platform connecting HCPC-registered therapists with clients across the UK. Alongside this, I&apos;m available as a fractional CTO for startups and growing companies. I help teams establish technical foundations, make architecture decisions, and bridge the gap between business goals and development execution.
+                    <strong>If you&apos;re a founder:</strong> I work as a fractional CTO (one to three days a week, seed to Series A), technical co-founder, or advisory CTO. I make the architecture decisions that determine whether you scale smoothly or rebuild in year two, and I stay hands-on in the code while doing it. Teams I&apos;ve built systems for have seen 25-30% faster delivery and 25% fewer defects from the component libraries and review practices I put in place.
                 </p>
+                <p className="mb-6">
+                    <strong>If you run an agency:</strong> I take overflow Next.js/TypeScript work, white-label, to the standard your clients paid you for. Marketing sites, multi-tenant SaaS dashboards, plus the awkward jobs: infrastructure rescue (DNS, SES/DKIM/SPF/DMARC, hosting migrations) and WordPress-to-modern-stack rebuilds.
+                </p>
+                <p className="mb-6">
+                    Next.js and TypeScript are my daily tools, but the work doesn&apos;t stop there. With my team I build mobile apps and custom software end to end: Nest.js and Strapi on the backend, Python and FastAPI services, AWS infrastructure with GitHub Actions pipelines. I also help teams set up AI-assisted development workflows.
+                </p>
+                <p className="mb-6">
+                    <strong>Recent work:</strong> the Therapyway marketplace and clinic app, Red CRM (lead and property management for a real estate firm that&apos;s been trading for 40 years), SoloTrader CRM (leads-to-invoice management for independent developers), and Location Square (a services marketplace with structured booking flows).
+                </p>
+                <Link href="/booking" className="flex items-center text-blue-600 hover:text-purple-600 transition-colors w-fit">
+                    <span className="text-sm underline hover:no-underline">
+                        Book an intro call
+                    </span>
+                    <MdOutlineDoubleArrow className="ml-2" />
+                </Link>
             </article>
             
             <section className="mb-8" aria-label="Professional Journey">

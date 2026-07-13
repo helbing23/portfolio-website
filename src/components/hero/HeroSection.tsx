@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useState, useEffect } from 'react';
+import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiLocationMarker } from 'react-icons/hi';
@@ -29,7 +29,7 @@ HeroImage.displayName = 'HeroImage';
 const LocationWidget = () => (
   <div className="absolute right-0 top-0 text-sm group xl:right-20 animate-float">
     <div className="flex items-center gap-2 rounded-xl bg-white/90 px-3 py-2 shadow-lg transition-colors dark:bg-neutral-800">
-      <HiLocationMarker color="text-red-500" />
+      <HiLocationMarker className="text-red-500" aria-hidden="true" />
       <span>United Kingdom</span>
     </div>
     <div className="absolute right-0 top-full mt-2 hidden rounded-xl bg-white/90 px-3 py-2 shadow-lg group-hover:block dark:bg-neutral-800">
@@ -38,31 +38,21 @@ const LocationWidget = () => (
   </div>
 );
 
-const HireButton = () => (
-  <Link 
-    href="/services#request-form"
+const BookCallButton = () => (
+  <Link
+    href="/booking"
     className="absolute bottom-0 left-10 flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-all hover:scale-105 hover:bg-green-700 md:left-14 lg:bottom-2 lg:left-16 xl:left-32 animate-float-delayed"
   >
     <span className="animate-pulse">💬</span>
-    Hire Me
+    Book an intro call
   </Link>
 );
 
 export default function HeroSection() {
-  const [text, setText] = useState('Freelancer');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setText(prevText => prevText === 'Aspiring CTO' ? 'Aspiring AI Engineer' : 'Aspiring CTO');
-    }, 3000); // Change text every 3 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
-
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col-reverse items-center justify-center gap-8 px-4 -mt-[60px] md:mt-0 md:flex-row md:px-6 lg:px-8"
+      className="flex min-h-screen flex-col-reverse items-center justify-center gap-8 -mt-[60px] md:mt-0 md:flex-row"
     >
       <div className="flex flex-col space-y-4 md:w-1/2">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
@@ -72,7 +62,7 @@ export default function HeroSection() {
           </span>
         </h1>
         <p className="text-lg md:text-xl">
-          Software Developer | {text}
+          Fractional CTO | Next.js Development Partner
         </p>
         <SocialFloating />
       </div>
@@ -94,9 +84,9 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        
+
         <LocationWidget />
-        <HireButton />
+        <BookCallButton />
       </div>
     </section>
   );

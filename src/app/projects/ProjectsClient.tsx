@@ -49,7 +49,7 @@ export default function ProjectsClient() {
     };
 
     return (
-        <section className="py-20 px-4 max-w-5xl mx-auto">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             <header>
                 <h1 className="text-3xl font-bold mb-6">Projects</h1>
             </header>

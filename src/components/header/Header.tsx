@@ -25,7 +25,6 @@ const Header = () => {
     { label: "Home", path: "/", hash: "#hero", isHash: true },
     { label: "Projects", path: "/projects", hash: "#about", isHash: true },
     { label: "Services", path: "/services", hash: "", isHash: false },
-    { label: "Insights", path: "/insights", hash: "", isHash: false },
     { label: "Contact", path: "/#contact", hash: "#contact", isHash: true },
   ];
 
@@ -118,8 +117,8 @@ const Header = () => {
         isFloating ? "fixed bottom-0 mb-4 lg:max-w-full" : "relative"
       } z-50 transition-opacity animate-fade-in-down`}
     >
-      <nav 
-      className="flex items-center mx-auto py-4 lg:px-8"
+      <nav
+      className="flex items-center mx-auto py-4"
       style={{ opacity: headerOpacity }}
       >
         {/* Logo */}
@@ -140,16 +139,24 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/booking"
+            className="-my-1 whitespace-nowrap rounded-full bg-green-600 px-4 py-1 text-sm font-medium text-white shadow-sm transition-all hover:scale-105 hover:bg-green-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
+          >
+            Book a call
+          </Link>
         </div>
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden fixed top-4 right-4 z-50"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (
-            <span className="text-2xl">✕</span>
+            <span className="text-2xl" aria-hidden="true">✕</span>
           ) : (
-            <span className="text-2xl">☰</span>
+            <span className="text-2xl" aria-hidden="true">☰</span>
           )}
         </button>
 
@@ -158,8 +165,9 @@ const Header = () => {
           <button
             onClick={toggleTheme}
             className="p-2 rounded-xl bg-black border border-white/[0.2]"
+            aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
           >
-            {theme === "light" ? "🌞" : "🌙"}
+            <span aria-hidden="true">{theme === "light" ? "🌞" : "🌙"}</span>
           </button>
         </div>
 
@@ -177,11 +185,19 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/booking"
+              className="rounded-xl bg-green-600 px-5 py-2.5 text-white transition-colors hover:bg-green-700"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Book a call
+            </Link>
             <button
               onClick={toggleTheme}
-                className="p-2 rounded bg-gray-100 dark:bg-gray-900 mt-4"
+              className="p-2 rounded bg-gray-100 dark:bg-gray-900 mt-4"
+              aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
             >
-              {theme === "light" ? "🌞" : "🌙"}
+              <span aria-hidden="true">{theme === "light" ? "🌞" : "🌙"}</span>
             </button>
             </div>
           </div>

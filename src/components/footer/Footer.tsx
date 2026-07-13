@@ -7,11 +7,11 @@ import CalendlyButton from '../ui/CalendlyButton';
 import Container from '../ui/Container';
 
 const socialLinks = [
-    { href: "https://linkedin.com/in/helbin-rapheal", icon: <FaLinkedin />, hoverColor: "hover:text-blue-600" },
-    { href: "https://github.com/helbing23", icon: <FaGithub />, hoverColor: "hover:text-gray-600" },
-    { href: "https://app.daily.dev/helbindev", icon: <SiDailydotdev />, hoverColor: "hover:text-black" },
-    { href: "https://bsky.app/profile/helbinr.bsky.social", icon: <SiBluesky />, hoverColor: "hover:text-blue-400" },
-    { href: "mailto:helbinrapheal24@gmail.com", icon: <SiGmail />, hoverColor: "hover:text-red-600" }
+    { href: "https://linkedin.com/in/helbin-rapheal", icon: <FaLinkedin />, hoverColor: "hover:text-blue-600", label: "LinkedIn profile" },
+    { href: "https://github.com/helbing23", icon: <FaGithub />, hoverColor: "hover:text-gray-600", label: "GitHub profile" },
+    { href: "https://app.daily.dev/helbindev", icon: <SiDailydotdev />, hoverColor: "hover:text-black", label: "daily.dev profile" },
+    { href: "https://bsky.app/profile/helbinr.bsky.social", icon: <SiBluesky />, hoverColor: "hover:text-blue-400", label: "Bluesky profile" },
+    { href: "mailto:helbinrapheal24@gmail.com", icon: <SiGmail />, hoverColor: "hover:text-red-600", label: "Email Helbin" }
   ]
 
 const Footer: React.FC = () => {
@@ -26,6 +26,7 @@ const Footer: React.FC = () => {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={link.label}
           className={`text-2xl ${link.hoverColor} transition-colors`}
         >
           {link.icon}

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function RecommendationsSection() {
     return (
-        <section id="recommendations" className="py-10 max-w-5xl mx-auto">
+        <section id="recommendations" className="py-16 md:py-24">
           {/* Desktop heading and link */}
           <div className="flex sm:flex-row justify-between items-center mb-8">
             <h2 className="text-3xl font-bold">LinkedIn Recommendations</h2>

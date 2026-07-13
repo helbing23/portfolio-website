@@ -13,7 +13,7 @@ export default function Container({
   as: Component = "div" 
 }: ContainerProps) {
   return (
-    <Component className={twMerge("relative w-full max-w-5xl mx-auto px-4", className)}>
+    <Component className={twMerge("relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8", className)}>
       {children}
     </Component>
   );
