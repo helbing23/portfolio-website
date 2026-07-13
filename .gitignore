@@ -50,3 +50,4 @@ logs
 
 node_modules
 bower_components
+.claude/launch.json
